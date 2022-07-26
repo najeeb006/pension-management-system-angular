@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <button style="font-size: 22px;" mat-button routerLink="/">
+      <mat-icon>home</mat-icon>
+       Pension Management</button>
+  <span class="fill-remaining-space"></span>
+  <span class="pensionerList"><a *ngIf="loggedIn" mat-button routerLink="/pensionerlist" routerLinkActive="mat-accent">Pensioner Detail</a></span>
+  <span class="pensionCalculation"><a *ngIf="loggedIn" mat-button routerLink="/pensionCalculation" routerLinkActive="mat-accent">Calculate Pension</a></span>
+  <span class="pensionStatus"><a *ngIf="loggedIn" mat-button routerLink="/pensionStatus" routerLinkActive="mat-accent">Pension Status</a></span>
+  <span class="login"></span>
+  <a *ngIf="!loggedIn" mat-raised-button routerLink="/login">Login</a>
+
+  <span class="username"><a *ngIf="loggedIn" mat-button>
+      <mat-icon *ngIf="loggedIn">account_circle</mat-icon>
+       {{userName}}</a></span>
+  <button *ngIf="loggedIn" (click)="logoutUser()" mat-raised-button style="margin-left: 25px;">
+      Logout</button>
+</mat-toolbar>
