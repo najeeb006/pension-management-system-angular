@@ -13,16 +13,16 @@ export class PensionerServiceService {
   constructor(private http:HttpClient) { }
 
   getPensionerDetail(){
-    return this.http.get<PensionerDetail[]>(this.baseUrl+"/details");
+    return this.http.get<PensionerDetail[]>(this.baseUrl+":9100/details");
   }
 
   getPensionStatus(credentials:any)
   {
-    return this.http.post<PensionStatusResponse>( `${this.baseUrl}/pensionStatus`,credentials);
+    return this.http.post<PensionStatusResponse>( `${this.baseUrl}:8000/pensionStatus`,credentials);
   }
 
   processPension(credentials:any)
   {
-    return this.http.post(`${this.baseUrl}/ProcessPension`,credentials);
+    return this.http.post(`${this.baseUrl}:9200/ProcessPension`,credentials);
   }
 }
