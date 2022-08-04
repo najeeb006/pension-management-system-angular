@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url:"http://microservice-b2512f3947ced398.elb.ap-south-1.amazonaws.com:9080"
+  url:"http://43.205.98.251:9080"
 };
 
 /*
